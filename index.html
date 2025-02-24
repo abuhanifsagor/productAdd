@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+    figure{
+        img{
+            transition: all .3s ease-in-out;
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+    } 
+    .hero{ 
+        background-image: url('bg.jpeg');
+        background-size: cover;
+        background-position: center;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    .productadd{
+background: rgba(255, 255, 255, 0.08);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.7px);
+-webkit-backdrop-filter: blur(8.7px);
+        .card-body{
+            .label-text{
+                color: rgb(207, 207, 207);
+                font-weight: 500;
+                font-size: 15px;
+            }
+            #addProduct{
+                width: 60% ;
+                margin: 0 auto;
+                border: none;
+                &:hover{
+                    background-color: rgb(0, 140, 255);
+                }
+            }
+        }
+    }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+    <div class="hero  bg-base-200 px-0 min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="text-center lg:text-center">
+            <h1 class="text-5xl text-white font-bold">Add Product</h1>
+            <p class="py-6 w-2/4 text-base-300 mx-auto ">
+              Easily add new products to your inventory. Ensure accurate details and streamline your catalog with our seamless process.
+            </p>
+          </div>
+          <div class="card productadd w-full max-w-sm shrink-0 shadow-2xl">
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Product Name</span>
+                </label>
+                <input id="productName" type="text" placeholder="Product Name" class="input input-bordered" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Product Image URL</span>
+                </label>
+                <input id="productImage" type="url" placeholder="Image URL" class="input input-bordered" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Product Price</span>
+                </label>
+                <input id="productPrice" type="text" placeholder="Product Price" class="input input-bordered" required />
+              </div>
+
+              <div class="form-control mt-6">
+                <button id="addProduct"  class="btn   text-white  bg-info ">ADD PRODUCT</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-20 px-4 container mx-auto ">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl text-black mb-20  font-bold text-center">Product List</h1>
+        <div id="productList" class="grid mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          <!-- Product cards will be dynamically added here -->
+
+
+
+       
+
+        </div>
+      </section>
+    <script src="main.js"></script>
+</body>
+</html>
