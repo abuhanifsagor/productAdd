@@ -6,19 +6,21 @@ const productLists = document.getElementById('productList');
 
 
 
- addBtn.addEventListener('click', function () {
+ addBtn.addEventListener('click', function (e) {
     
-    event.preventDefault();
+    e.preventDefault();
 
     const productNames = productName.value.trim();
     const productImages = productImg.value.trim();
     const productPrices = productPrice.value.trim(); 
 
     if(!productNames || !productImages || !productPrices){
-        alert('All fields are required!')
+        
+        alert('All fields are required!');
         return;
     }
 
+    
     if(isNaN(productPrices) ||  Number(productPrices) <= 9){
         alert('Invalid Price!')
         return;
@@ -42,6 +44,10 @@ const productLists = document.getElementById('productList');
      </div>
     
    `   ;
+
+   productName.value = '';
+   productImg.value= '';
+   productPrice.value = '';
 
    productLists.appendChild(productCard);
 
